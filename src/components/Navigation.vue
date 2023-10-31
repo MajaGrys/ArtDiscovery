@@ -2,6 +2,8 @@
 </script>
 
 <template>
-  <main>
-  </main>
+Navbar
 </template>
+
+<style lang="scss">
+</style>
