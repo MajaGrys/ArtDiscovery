@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 import Navigation from './components/Navigation.vue';
-import Item from './components/Item.vue';
+
 </script>
 
 <template>
   <Navigation />
-  <Item />
   <RouterView />
 </template>
 
-<style lang="scss">
+<style lang="css">
+*, *::before, *::after {
+ 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 </style>

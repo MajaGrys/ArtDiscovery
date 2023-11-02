@@ -1,9 +1,43 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-Navbar
+    <nav>
+        <RouterLink to="/" class="link">Home</RouterLink>
+        <RouterLink to="/products" class="link">Products</RouterLink>
+        <RouterLink to="/about" class="link">About</RouterLink>
+        <form>
+            <input type="text" name="item" placeholder="Search for items" />
+            <button type="submit">Search</button>
+        </form>
+    </nav>
 </template>
 
-<style lang="scss">
+<style lang="css">
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    .link {
+        margin: 20px;
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    cursor: pointer;
+}
 </style>
