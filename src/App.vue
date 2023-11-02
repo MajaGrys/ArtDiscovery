@@ -6,7 +6,9 @@ import Navigation from './components/Navigation.vue';
 
 <template>
   <Navigation />
+  <main>
   <RouterView />
+  </main>
 </template>
 
 <style lang="css">
@@ -15,4 +17,12 @@ import Navigation from './components/Navigation.vue';
 	margin: 0;
 	padding: 0;
 }
+
+main {
+	width: 90vw;
+	height: 80vh;
+	margin: auto;
+	border: 1px black solid;
+}
+
 </style>

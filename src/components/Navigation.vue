@@ -19,6 +19,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 20px;
     
     .link {
@@ -35,6 +36,7 @@ nav {
 input, button {
     padding: 10px;
     margin: 5px;
+    max-width: 150px;
 }
 
 button {
