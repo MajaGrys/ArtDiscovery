@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Item from '@/components/Item.vue';
+import axios from 'axios';
 
 type ItemType = {
     category: string,
@@ -11,23 +11,31 @@ type ItemType = {
     title: string
 }
 
-const items:[] = [];
+const items:Array<Object> = [];
 
-const getItems = () => {
-    fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => json.map((e:ItemType) => items.push(e)) )
-}
+axios.get('https://fakestoreapi.com/products')
+.then(function (response) {response.data.forEach(element => {
+    items.push(element);
+});});
 
-getItems();
 console.log(items)
 
 </script>
 
 <template>
-    <div v-for="item in items"><Item :item="item" /></div>
-    
+    <div class="container" v-for="item in items">
+        <img src={{ item.image }} /> 
+        <div class="name"> {{ item.title }}</div>
+    {{ item.category }}, {{ item.description }}, {{ item.price }}, rating
+    </div>    
 </template>
 
-<style>
+<style lang="css" scoped>
+.container {
+    margin: 10px;
+
+    .name {
+        font-size: x-large;
+    }
+}
 </style>
