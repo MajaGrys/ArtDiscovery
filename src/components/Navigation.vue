@@ -5,12 +5,12 @@ import { RouterLink } from 'vue-router';
 <template>
     <nav>
         <RouterLink to="/" class="link">Home</RouterLink>
-        <RouterLink to="/products" class="link">Products</RouterLink>
+        <RouterLink to="/discover" class="link">Discover Art</RouterLink>
         <RouterLink to="/about" class="link">About</RouterLink>
-        <form>
+        <!-- <form>
             <input type="text" name="item" placeholder="Search for items" />
             <button type="submit">Search</button>
-        </form>
+        </form> -->
     </nav>
 </template>
 
