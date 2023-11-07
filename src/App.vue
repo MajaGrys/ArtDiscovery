@@ -7,7 +7,7 @@ import Navigation from './components/Navigation.vue';
 <template>
   <Navigation />
   <main>
-  <RouterView />
+	<Suspense><RouterView /></Suspense>
   </main>
 </template>
 
@@ -23,6 +23,7 @@ main {
 	height: 80vh;
 	margin: auto;
 	border: 1px black solid;
+	padding: 20px;
 }
 
 </style>
