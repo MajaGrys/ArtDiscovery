@@ -3,14 +3,12 @@ import axios from 'axios';
 import { computed } from 'vue';
 
 const res = await axios.get('https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit=20&fields=id,title,image_id, artist_title')
-// https://api.artic.edu/api/v1/artworks/75644
-
 const data = res.data.data
 
 const filteredData = computed(() => {
     return data.filter(item => item.image_id !== null)
 })
-console.log(data)
+
 </script>
 
 <template>
@@ -22,7 +20,6 @@ console.log(data)
             {{ item.title }} by {{ item.artist_title === null ? 'Unknown' : item.artist_title }}
         </div>
     </div>
-    <!--   -->
 </div></div>
 </template>
 
@@ -39,22 +36,29 @@ console.log(data)
 
 .item-box {
     width: 250px;
+    position: relative;
 }
 
 img {
     width: inherit;
     border: 6px double black;
+}
 
-    &:hover {
-        opacity: 50%;
-    }
+.item-box:hover img {
+    opacity: 50%;
 }
 
 .description {
-    position: relative;
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
     margin: 10px;
-    width: 180px;
-    cursor: default;
+}
 
+.item-box:hover .description {
+    opacity: 100%;
 }
 </style>
