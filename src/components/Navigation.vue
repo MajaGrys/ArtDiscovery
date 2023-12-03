@@ -4,42 +4,33 @@ import { RouterLink } from 'vue-router';
 
 <template>
     <nav>
-        <RouterLink to="/" class="link">Home</RouterLink>
-        <RouterLink to="/discover" class="link">Discover Art</RouterLink>
-        <RouterLink to="/about" class="link">About</RouterLink>
-        <!-- <form>
-            <input type="text" name="item" placeholder="Search for items" />
-            <button type="submit">Search</button>
-        </form> -->
+        <div>
+            ArtDiscovery
+        </div>
+        <div>
+            <RouterLink to="/" class="link">Home</RouterLink>
+            <RouterLink to="/discover" class="link">Discover Art</RouterLink>
+            <RouterLink to="/about" class="link">About</RouterLink>
+        </div>
     </nav>
 </template>
 
 <style lang="css">
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
+    height: 60px;
+    margin: 0 20px;
     
     .link {
-        margin: 20px;
-        color: black;
+        margin: 30px;
         text-decoration: none;
 
         &:hover {
-            color: red;
+            color: green;
+            transition: 0.3s;
         }
     }
-}
-
-input, button {
-    padding: 10px;
-    margin: 5px;
-    max-width: 150px;
-}
-
-button {
-    cursor: pointer;
 }
 </style>

@@ -5,10 +5,12 @@ import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
-  <Navigation />
-  <main>
-	<Suspense><RouterView /></Suspense>
-  </main>
+	<Navigation />
+	<main>
+		<Suspense>
+			<RouterView />
+		</Suspense>
+	</main>
 </template>
 
 <style lang="css">
@@ -18,12 +20,20 @@ import Navigation from './components/Navigation.vue';
 	padding: 0;
 }
 
-main {
-	width: 90vw;
-	height: 80vh;
-	margin: auto;
-	border: 1px black solid;
+html {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+section {
+	position: absolute;
+	top: 58px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
 	padding: 20px;
+	border: solid 1px green;
 }
 
 </style>
